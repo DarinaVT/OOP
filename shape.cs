@@ -37,31 +37,35 @@ public class Square : Shape
     {
         if (width != height)
         {
-            Console.WriteLine("Width and height of a square must be equal");
-            return;
+            throw new ArgumentException("Width and height of a square must be equal");
         }
         Width = width;
         Height = height;
     }
+
     public override int CalculateSurface()
     {
         return Width * Height;
     }
 }
 
+
 class Program
 {
     public static void Main()
     {
-        Triangle triangle = new Triangle(5, 10);
-        Console.WriteLine("Triangle's surface: " + triangle.CalculateSurface() + " squared cm");
+        Shape[] shapes = new Shape[4];
+        try { shapes[0] = new Rectangle(5, 10); } catch (Exception ex) { Console.WriteLine(ex.Message); }
+        try { shapes[1] = new Triangle(5, 10); } catch (Exception ex) { Console.WriteLine(ex.Message); }
+        try { shapes[2] = new Square(5, 5); } catch (Exception ex) { Console.WriteLine(ex.Message); }
+        try { shapes[3] = new Square(5, 10); } catch (Exception ex) { Console.WriteLine(ex.Message); }
 
-        Rectangle rectangle = new Rectangle(5, 10);
-        Console.WriteLine("Rectangle's surface: " + rectangle.CalculateSurface() + " squared cm");
-
-        Square square = new Square(5, 5);
-        Console.WriteLine("Square's surface: " + triangle.CalculateSurface() + " squared cm");
-
-        Square square1 = new Square(5, 10);
+        foreach (var shape in shapes)
+        {
+            if (shape != null)
+            {
+                Console.WriteLine($"{shape.GetType().Name} = {shape.CalculateSurface()}");
+            }
+        }
     }
 }
