@@ -4,12 +4,12 @@ public class BankSystem
 
     public void Run()
     {
-        Console.WriteLine("Use the following commands:");
-        Console.WriteLine("createUser FirstName LastName Balance");
-        Console.WriteLine("withdraw FirstName LastName Amount");
-        Console.WriteLine("sendMoney SenderFirstName SenderLastName ReceiverFirstName ReceiverLastName Amount");
-        Console.WriteLine("loanMoney FirstName LastName");
-        Console.WriteLine("checkBalance FirstName LastName");
+        Console.WriteLine("Use the commands bellow, following the required format:");
+        Console.WriteLine("createUser - first name, last name, balance");
+        Console.WriteLine("withdraw - first name, last name, amount");
+        Console.WriteLine("sendMoney - sender's first and last name, receiver's first and last name, amount");
+        Console.WriteLine("loanMoney - first name, last name");
+        Console.WriteLine("checkBalance - first name, last name");
         Console.WriteLine("listClients");
         Console.WriteLine("exit");
 
