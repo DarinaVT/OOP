@@ -1,0 +1,14 @@
+D:\uni\RandomExercises\RandomExercises\bin\Debug\net8.0\RandomExercises.exe
+D:\uni\RandomExercises\RandomExercises\bin\Debug\net8.0\RandomExercises.deps.json
+D:\uni\RandomExercises\RandomExercises\bin\Debug\net8.0\RandomExercises.runtimeconfig.json
+D:\uni\RandomExercises\RandomExercises\bin\Debug\net8.0\RandomExercises.dll
+D:\uni\RandomExercises\RandomExercises\bin\Debug\net8.0\RandomExercises.pdb
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.GeneratedMSBuildEditorConfig.editorconfig
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.AssemblyInfoInputs.cache
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.AssemblyInfo.cs
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.csproj.CoreCompileInputs.cache
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.dll
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\refint\RandomExercises.dll
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.pdb
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\RandomExercises.genruntimeconfig.cache
+D:\uni\RandomExercises\RandomExercises\obj\Debug\net8.0\ref\RandomExercises.dll

@@ -1,143 +1,47 @@
-public interface IAccount
-{
-    protected float Balance { get; set; }
-    protected float InterestRate { get; set; }
-    protected DateTime DateOpen { get; set; }
-    protected int MonthsPassed { get; set; }
+using System;
+using System.Globalization;
 
-    protected void Deposit(float amount);
-    protected float Interest();
+class Bank
+{
+    public static void Main()
+    {
+        Accountee ordinaryUser = new Accountee("Иван Петров", 48000);
+        Special specialUser = new Special("Петър Иванов", 50000);
+        Console.WriteLine(ordinaryUser.Status());
+        Console.WriteLine(specialUser.Status());
+    }
 }
 
-public interface IClient
-{
-    protected string Name { get; }
-    protected string Address { get; }
-}
-
-public abstract class Client : IClient
+class Accountee
 {
     public string Name { get; set; }
-    public string Address { get; set; }
+    public double Balance { get; set; }
 
-    protected Client(string name, string address)
+    public Accountee(string name, double balance)
     {
         Name = name;
-        Address = address;
-    }
-}
-
-public abstract class Account : IAccount
-{
-    public IClient Client { get; set; }
-    public float Balance { get; set; }
-    public float InterestRate { get; set; }
-    public DateTime DateOpen { get; set; }
-    public int MonthsPassed { get; set; }
-
-    public Account(IClient client, float balance, float interestRate, DateTime dateOpen)
-    {
-        Client = client;
         Balance = balance;
-        InterestRate = interestRate;
-        DateOpen = dateOpen;
     }
 
-    public void Deposit(float amount)
+    public virtual string Status()
     {
-        Balance += amount;
-    }
-
-    public abstract float Interest();
-}
-public class Individual : Client
-{
-    public string LastName { get; set; }
-
-    public Individual(string name, string address, string lastName) : base(name, address)
-    {
-        LastName = lastName;
+        double converted = Balance * 1.798;
+        CultureInfo culture = new CultureInfo("bg-BG");
+        return $"Name: {Name}, balance: {converted.ToString("C", culture)}";
     }
 }
 
-public class Company : Client
+class Special : Accountee
 {
-    public string LEI { get; set; }
-
-    public Company(string name, string address, string lei) : base(name, address)
-    {
-        LEI = lei;
-    }
-}
-
-public class Deposit : Account
-{
-    public Deposit(IClient client, float balance, float interestRate, DateTime dateOpen) : base(client, balance, interestRate, dateOpen)
-    {
-        if (balance > 0 && balance <= 1000)
-        {
-            InterestRate = 0;
-        }
-    }
-
-    public override float Interest()
-    {
-        DateTime currentDate = DateTime.Now;
-        MonthsPassed = ((currentDate.Year - DateOpen.Year) * 12) + currentDate.Month - DateOpen.Month;
-
-        if (Balance > 1000 || Balance < 0)
-        {
-            return MonthsPassed * InterestRate;
-        }
-
-        return 0;
-    }
-}
-
-public class Loan : Account
-{
-    public Loan(IClient client, float balance, float interestRate, DateTime dateOpen) : base(client, balance, interestRate, dateOpen)
+    public Special(string name, double balance) : base(name, balance)
     {
     }
 
-    public override float Interest()
+    public override string Status()
     {
-        DateTime currentDate = DateTime.Now;
-        MonthsPassed = ((currentDate.Year - DateOpen.Year) * 12) + currentDate.Month - DateOpen.Month;
-
-        if (Client is Individual && MonthsPassed < 4)
-        {
-            return 0;
-        }
-        else if (Client is Company && MonthsPassed < 3)
-        {
-            return 0;
-        }
-
-        return MonthsPassed * InterestRate;
-    }
-}
-
-public class Mortgage : Account
-{
-    public Mortgage(IClient client, float balance, float interestRate, DateTime dateOpen) : base(client, balance, interestRate, dateOpen)
-    {
-    }
-
-    public override float Interest()
-    {
-        DateTime currentDate = DateTime.Now;
-        MonthsPassed = ((currentDate.Year - DateOpen.Year) * 12) + currentDate.Month - DateOpen.Month;
-
-        if (Client is Company && MonthsPassed < 13)
-        {
-            return (MonthsPassed * InterestRate) / 2;
-        }
-        else if (Client is Individual && MonthsPassed < 7)
-        {
-            return 0;
-        }
-
-        return MonthsPassed * InterestRate;
+        double conversion = Balance * 1.798;
+        double interest = conversion + (conversion * 0.02);
+        CultureInfo culture = new CultureInfo("bg-BG");
+        return $"Hello, {Name}, balance: {interest.ToString("C", culture)}";
     }
 }
