@@ -1,0 +1,14 @@
+D:\uni\IBANChecker\IBANChecker\bin\Debug\net8.0\ISBNChecker.exe
+D:\uni\IBANChecker\IBANChecker\bin\Debug\net8.0\ISBNChecker.deps.json
+D:\uni\IBANChecker\IBANChecker\bin\Debug\net8.0\ISBNChecker.runtimeconfig.json
+D:\uni\IBANChecker\IBANChecker\bin\Debug\net8.0\ISBNChecker.dll
+D:\uni\IBANChecker\IBANChecker\bin\Debug\net8.0\ISBNChecker.pdb
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.GeneratedMSBuildEditorConfig.editorconfig
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.AssemblyInfoInputs.cache
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.AssemblyInfo.cs
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.csproj.CoreCompileInputs.cache
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.dll
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\refint\ISBNChecker.dll
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.pdb
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ISBNChecker.genruntimeconfig.cache
+D:\uni\IBANChecker\IBANChecker\obj\Debug\net8.0\ref\ISBNChecker.dll
